@@ -26,7 +26,7 @@ namespace DatosSakila
                 }
             }
             salida = _configuracion["CadenaMySql"];
-#if WINDOWS || NETCOREAPP
+#if WINDOWS
 			salida += ";SslMode=Required;";
 #else
             salida += ";SslMode=none;AllowPublicKeyRetrieval=True;";

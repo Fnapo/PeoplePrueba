@@ -10,6 +10,13 @@ namespace DatosSakila.Modelos
     [Index(nameof(LastName), Name = "idx_actor_last_name")]
     public partial class Actor
     {
+    /*
+        public Actor(string firstName, string lastName)
+        {
+                FirstName = firstName;
+                LastName = lastName;
+        }*/
+
         [Key]
         [Column("actor_id")]
         public ushort ActorId { get; set; }
@@ -24,5 +31,13 @@ namespace DatosSakila.Modelos
 
         [Column("last_update", TypeName = "timestamp")]
         public DateTime LastUpdate { get; set; }
+
+        public string NombreCompleto { get 
+            {
+                string salida = $"{LastName}, {FirstName}";
+
+                return salida;
+            } 
+        }
     }
 }

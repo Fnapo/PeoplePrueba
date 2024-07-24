@@ -16,7 +16,7 @@ public static class MauiProgram
 			});
 
 		// TODO: Add statements for adding PersonRepository as a singleton
-		string cadena = ConfiguracionBBDD.ObtenerCadenaConexion();
+        builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<PersonRepository>(s));
 
         return builder.Build();
 	}
